@@ -8,5 +8,12 @@
 
     </style>
 
+    <style name="Calculator.Buttons.Operations" parent="Base.Theme.Calculator">
+
+        <item name="android:backgroundTint">@color/blue_light</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
     <style name="Theme.Calculator" parent="Base.Theme.Calculator" />
 </resources>
