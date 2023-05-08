@@ -1,11 +1,11 @@
-# Build a Calculator • Part 2 : Adding a Numpad and Basic Arithmetic Operations
+# Build a Calculator • Part 3 : Performing Complex Arithmetics
 
 ## Android Calculator Github
 
 ## Description
-Ready to take your calculator app to the next level? In this video, we'll show you how to add a numpad to your existing application and enable basic arithmetic operations such as addition. You'll learn how to handle user input, perform calculations, and display the results. Whether you're a beginner or an experienced developer, this tutorial is perfect for anyone looking to enhance their calculator project. So grab your favorite code editor and let's get started!
+In this tutorial, we'll take your calculator app to the next level by showing you how to perform advanced arithmetic operations. You'll learn how to handle user input, perform complex calculations, and display the results. We provide step-by-step guidance to help you enhance your calculator project. Whether you're a beginner or an experienced developer, this tutorial is perfect for anyone looking to expand their knowledge of Android Studio and take their calculator app to new heights. So grab your favorite code editor and let's get started!
 
 ## Youtube Video :
-[youtube Video URL](https://youtu.be/aMspy62IYBs)
+[youtube Video URL](https://youtu.be/AUOxon5ddHY)
 
-[![IMAGE ALT TEXT](https://i3.ytimg.com/vi/aMspy62IYBs/maxresdefault.jpg)](https://youtu.be/aMspy62IYBs)
+[![IMAGE ALT TEXT](https://i3.ytimg.com/vi/AUOxon5ddHY/maxresdefault.jpg)](https://youtu.be/AUOxon5ddHY)

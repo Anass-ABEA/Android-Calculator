@@ -49,6 +49,27 @@
             android:layout_height="match_parent">
 
             <Button
+                android:id="@+id/btn_plus"
+                style="@style/Calculator.Buttons.Operations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="+" />
+
+            <Button
+                android:id="@+id/btn_erase"
+                style="@style/Calculator.Buttons.Operations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/erase" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
                 android:id="@+id/button1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -65,6 +86,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3" />
+
+            <Button
+                android:id="@+id/btn_mul"
+                style="@style/Calculator.Buttons.Operations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="x" />
         </TableRow>
 
         <TableRow
@@ -88,6 +116,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="6" />
+
+            <Button
+                android:id="@+id/btn_div"
+                style="@style/Calculator.Buttons.Operations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/" />
         </TableRow>
 
         <TableRow
@@ -111,6 +146,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="9" />
+
+            <Button
+                android:id="@+id/btn_minus"
+                style="@style/Calculator.Buttons.Operations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-" />
         </TableRow>
 
         <TableRow
@@ -118,17 +160,17 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/btn_plus"
-                style="@style/Calculator.Buttons.Operations"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="+" />
-
-            <Button
                 android:id="@+id/button0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="0" />
+
+            <Button
+                android:id="@+id/btn_comma"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="," />
 
             <Button
                 android:id="@+id/btn_equals"

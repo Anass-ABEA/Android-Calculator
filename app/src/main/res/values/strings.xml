@@ -2,4 +2,5 @@
     <string name="app_name">Calculator</string>
     <string name="clear">Clear</string>
     <string name="initial_tv_value">Click on Increment</string>
+    <string name="erase">Erase</string>
 </resources>
