@@ -3,21 +3,22 @@ package com.example.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.calculator.models.EvaluateOperations;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
 
-    private Button btnClear, btnPlus, btnEquals, btnMul, btnDiv, btnErase, btnMinus, btnComma;
+    private Button btnClear, btnPlus, btnEquals, btnMul, btnDiv, btnErase, btnMinus, btnComma,btnPlusMinus;
     private List<Button> btnList;
-    private TextView tvValue;
+    private TextView tvValue, tvHistory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void clickListeners() {
-        this.btnClear.setOnClickListener(v -> this.tvValue.setText(""));
+        this.btnClear.setOnClickListener(v -> {
+            this.tvValue.setText("");
+            this.tvHistory.setText("");
+        });
         this.btnPlus.setOnClickListener(v -> addOperation(" + "));
         this.btnMinus.setOnClickListener(v -> addOperation(" - "));
         this.btnMul.setOnClickListener(v -> addOperation(" * "));
@@ -51,8 +55,28 @@ public class MainActivity extends AppCompatActivity {
         }
 
         this.btnEquals.setOnClickListener((v) -> {
-            double result = EvaluateOperations.evaluateWithPriority(this.tvValue.getText().toString());
-            this.tvValue.setText(String.valueOf(result));
+            String value = this.tvValue.getText().toString();
+            this.tvHistory.setText(value);
+
+            double result = EvaluateOperations.evaluateWithPriority(value);
+            DecimalFormatSymbols formatSymbols = new DecimalFormatSymbols();
+            DecimalFormat df = new DecimalFormat("#.####",formatSymbols);
+
+            this.tvValue.setText(df.format(result));
+        });
+
+        this.btnPlusMinus.setOnClickListener(v->{
+            String value = this.tvValue.getText().toString();
+            if(value.length() == 0 || value.endsWith(" ")) return;
+            int index = value.lastIndexOf(" ");
+
+            if(index!=-1){ // 3 * 5
+                Double lastNumber = Double.parseDouble(value.substring(index+1));
+                value = value.substring(0,index+1)+ (-lastNumber);
+                this.tvValue.setText(value);
+            }else{
+                this.tvValue.setText(String.valueOf(-Double.parseDouble(value)));
+            }
         });
 
     }
@@ -74,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         this.btnErase = findViewById(R.id.btn_erase);
         this.btnMul = findViewById(R.id.btn_mul);
         this.btnComma = findViewById(R.id.btn_comma);
+        this.btnPlusMinus = findViewById(R.id.btn_plus_minus);
 
         this.btnList = new ArrayList<>();
         this.btnList.add(findViewById(R.id.button0));
@@ -88,5 +113,6 @@ public class MainActivity extends AppCompatActivity {
         this.btnList.add(findViewById(R.id.button9));
 
         this.tvValue = findViewById(R.id.tv_value);
+        this.tvHistory = findViewById(R.id.tv_history);
     }
 }
